@@ -91,5 +91,12 @@ class Radio implements iRadio {
             this.estacionActual = this.estacionesAm.get(boton);
         }
     }
+
+	@Override
+	public void Estacion() {
+		// TODO Auto-generated method stub
+		
+		 System.out.println("La laa la raa laaa!");
+	}
     
 }

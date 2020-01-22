@@ -47,4 +47,5 @@ interface iRadio {
     Recibe el numero del boton, busca en la lista y lo agrega a la estacion actual
     */
     void seleccionarEmisora(int boton);
+    public void Estacion();
 }

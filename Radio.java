@@ -102,5 +102,10 @@ class Radio implements iRadio {
             }
         }
     }
+
+	@Override
+	public void Estacion() {
+		 System.out.println("La laa la raa laaa!");
+	}
     
 }

@@ -1,3 +1,4 @@
+
 /*
 Universidad del Valle de Guatemala
 Algoritmos y estructuras de datos - CC2003
@@ -11,30 +12,36 @@ Y FM que van de 87.9 a 107.9 en intervalos de 0.2 en 0.2
 
 Last modification: 20/01/2020
 */
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 class Radio implements iRadio {
-
-    public Radio() {
-        onOff = false; //<-- Apagado
-        amFm = false; //<-- Am
-        estacionesAm = new ArrayList<Double>(12);
-        estacionesFm = new ArrayList<Double>(12);
-        estacionActual = 530.0; //Inicio de las estaciones
-    }
 
     private boolean onOff; //guarda el estado de encendido o apagado
     private boolean amFm; //guarda el estado de AM/FM FALSE = AM / TRUE = FM
     private double estacionActual; //guarda la estacion actual
     private ArrayList<Double> estacionesAm; //Botones de estaciones AM
     private ArrayList<Double> estacionesFm; //Botones de estaciones FM
+    private static DecimalFormat df = new DecimalFormat("#.#");
+    
+    public Radio() {
+        onOff = false; //<-- Apagado
+        amFm = false; //<-- Am
+        estacionActual = 530.0; //Inicio de las estaciones
+        estacionesAm = new ArrayList<Double>(12);
+        estacionesFm = new ArrayList<Double>(12);
+        for (int i = 0; i < 12; i++) {
+            estacionesAm.add(i+1.0);
+            estacionesFm.add(i+1.0);
+        }
+    }
 
     public String estacionActual() {
-        return String.valueOf(this.estacionActual); // convierte a string para mostrar en label
+        return df.format(this.estacionActual); // convierte a string para mostrar en label
     }
 
     public Boolean estado() {
-        return this.onOff;
+        return this.amFm;
     }
 
     public void onOff() { //Cambia de true a false y viceversa
@@ -76,7 +83,7 @@ class Radio implements iRadio {
         }
     }
 
-    public void guardar(int boton) { //Guarda la estacion actual en la posicion del boton seleccionado a la lista indicada
+    public void guardar(final int boton) { //Guarda la estacion actual en la posicion del boton seleccionado a la lista indicada
         if (this.amFm) {
             this.estacionesFm.set(boton, this.estacionActual);
         } else {
@@ -86,9 +93,13 @@ class Radio implements iRadio {
 
     public void seleccionarEmisora(int boton) { //Toma el valor del boton seleccionado en la lista de estaciones y la coloca en la actual
         if (this.amFm) {
-            this.estacionActual = this.estacionesFm.get(boton);
+            if (estacionesFm.get(boton) >= 87.9) {
+                this.estacionActual = this.estacionesFm.get(boton);
+            }
         } else {
-            this.estacionActual = this.estacionesAm.get(boton);
+            if (estacionesAm.get(boton) >= 530.0) {
+                this.estacionActual = this.estacionesAm.get(boton);
+            }
         }
     }
     

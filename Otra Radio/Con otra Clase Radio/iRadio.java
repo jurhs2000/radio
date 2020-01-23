@@ -9,7 +9,7 @@ Interfaz Radio
 Esta interfaz hace el contrato de los metodos que se definiran en las clases que la implementen.
 Muestra todos los metodos que seran definidos por un objeto radio.
 
-Last modification: 22/01/2020
+Last modification: 20/01/2020
 */
 interface iRadio {
 

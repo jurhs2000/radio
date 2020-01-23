@@ -40,7 +40,7 @@ class Radio implements iRadio {
     }
 
     public Boolean estado() {
-        return this.amFm;
+        return this.onOff;
     }
 
     public void onOff() { //Cambia de true a false y viceversa

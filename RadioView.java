@@ -1,3 +1,18 @@
+/*
+Universidad del Valle de Guatemala
+Algoritmos y estructuras de datos - CC2003
+
+Julio Herrera 19402
+Marco Ramírez 19588
+
+Radio View
+Interfaz Grafica del programa de radio, esta clase es un diseño de ventana que,
+contiene todos los elementos graficos así como las referencias a las funciones de la clase
+Radio.
+Interfaz Java Swing construida con Window Builder en Eclipse
+
+Last modification: 22/01/2020
+*/
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,9 +24,6 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.SwingConstants;
-
-import com.sun.source.tree.WhileLoopTree;
-
 import java.awt.Dialog.ModalExclusionType;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,29 +33,14 @@ public class RadioView {
 
 	Radio radio = new Radio();
 	private JFrame frmRadio;
-	private JTextField txtNumero;
 	private JTextField txtFrecuencia;
-<<<<<<< HEAD
 	private boolean save = false;
 
-=======
-//	private double am=10.0;
-//	private double x=530.0;
->>>>>>> b3e16665aca7bcde9064ee9159b2d2a83f32e4ac
 	/**
 	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RadioView window = new RadioView();
-					window.frmRadio.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	*/
+	public void start() {
+		frmRadio.setVisible(true);
 	}
 
 	/**
@@ -51,18 +48,12 @@ public class RadioView {
 	 */
 	public RadioView() {
 		initialize();
-	//	double am=10.0;
-	//	double x=530.0;
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		Radio R = new Radio();
-		//Estacion(R);
-		
-		
 		frmRadio = new JFrame();
 		frmRadio.setTitle("RADIO\r\n");
 		frmRadio.setResizable(false);
@@ -84,10 +75,6 @@ public class RadioView {
 		frmRadio.getContentPane().add(btnOff);
 		
 		JButton btn1AM = new JButton("1");
-<<<<<<< HEAD
-=======
-		
->>>>>>> b3e16665aca7bcde9064ee9159b2d2a83f32e4ac
 		btn1AM.setEnabled(false);
 		btn1AM.setFont(new Font("Tw Cen MT Condensed", Font.BOLD, 10));
 		btn1AM.setBounds(49, 351, 56, 23);
@@ -165,6 +152,18 @@ public class RadioView {
 		lblFavAmFm.setFont(new Font("Tw Cen MT Condensed", Font.BOLD, 20));
 		lblFavAmFm.setBounds(20, 262, 184, 52);
 		frmRadio.getContentPane().add(lblFavAmFm);
+		
+		JButton btnAM = new JButton("AM");
+		btnAM.setEnabled(false);
+		btnAM.setFont(new Font("Tw Cen MT Condensed", Font.BOLD, 42));
+		btnAM.setBounds(600, 98, 119, 52);
+		frmRadio.getContentPane().add(btnAM);
+		
+		JButton btnFM = new JButton("FM");
+		btnFM.setEnabled(false);
+		btnFM.setFont(new Font("Tw Cen MT Condensed", Font.BOLD, 42));
+		btnFM.setBounds(600, 156, 119, 52);
+		frmRadio.getContentPane().add(btnFM);
 		
 		JLabel lblRadio = new JLabel("RADIO");
 		lblRadio.setEnabled(false);
@@ -385,7 +384,6 @@ public class RadioView {
 			}
 		});
 		
-<<<<<<< HEAD
 		btnOn.addActionListener( new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -393,18 +391,6 @@ public class RadioView {
 				btnFM.setEnabled(true);
 				txtFrecuencia.setEnabled(true);
 				lblRadio.setEnabled(true);
-				btn1AM.setEnabled(true);
-				btn2AM.setEnabled(true);
-				btn3AM.setEnabled(true);
-				btn4AM.setEnabled(true);
-				btn5AM.setEnabled(true);
-				btn6AM.setEnabled(true);
-				btn7AM.setEnabled(true);
-				btn8AM.setEnabled(true);
-				btn9AM.setEnabled(true);
-				btn10AM.setEnabled(true);
-				btn11AM.setEnabled(true);
-				btn12AM.setEnabled(true);
 				btnSave.setEnabled(true);
 				lblFavAmFm.setText("Favoritas");
 				btnNext.setEnabled(true);
@@ -455,65 +441,13 @@ public class RadioView {
 				btnFM.setEnabled(false);
 				radio.cambiarFrecuencia();
 				txtFrecuencia.setText(radio.estacionActual());
-=======
-		JButton BF_cambiar = new JButton("Cambiar Frecuencia");
-		
-		BF_cambiar.setBounds(599, 117, 155, 23);
-		frmRadio.getContentPane().add(BF_cambiar);
-		
-		JLabel lblF = new JLabel("");
-		lblF.setFont(new Font("Tw Cen MT Condensed", Font.BOLD, 20));
-		lblF.setBounds(599, 76, 119, 23);
-		frmRadio.getContentPane().add(lblF);
-		btnNext.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-			
-				// TODO Auto-generated method stub
-				//musica.avanzar();
-				//txtFrecuencia.setText(String.valueOf(musica.avanzar()));
-		/*		if((x+am)<=1610.0) {
-					txtFrecuencia.setText(String.valueOf(x+am));
-					am+=10.0;
-				}else {
-					
-					txtFrecuencia.setText(String.valueOf(x));
-					
-				} */
-				
-			
-				txtFrecuencia.setText(CambioAM(R));
-				
-				
-				
-					
-				
-				
 			}
 		});
 
-		btnOn.addActionListener( new ActionListener() {
-			
+		btnSave.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-				btnNext.setEnabled(true);
-				txtFrecuencia.setEnabled(true);
-				lblRadio.setEnabled(true);
-				BF_cambiar.setEnabled(true);
-				lblFavAmFm.setEnabled(true);
-				
-				
-				
-				
-			}
-		});
-		BF_cambiar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//lblF.setText("FM");
+				changeSave();
 				btn1AM.setEnabled(true);
 				btn2AM.setEnabled(true);
 				btn3AM.setEnabled(true);
@@ -526,59 +460,6 @@ public class RadioView {
 				btn10AM.setEnabled(true);
 				btn11AM.setEnabled(true);
 				btn12AM.setEnabled(true);
-				btnSave.setEnabled(true);
-				lblF.setEnabled(true);
-				lblNumero.setEnabled(true);
-				txtFrecuencia.setText(Cfrecuencia(R));
-				if(Double.valueOf(txtFrecuencia.getText())>=530.0) {
-					lblF.setText("AM");
-							
-				}else if(Double.valueOf(txtFrecuencia.getText())<=530.0) {
-					lblF.setText("FM");
-				}
-			//	lblF.setText(Cfrecuencia(R)+"am");
-				//lblF.setText("AM");
-				
-			}
-		});
-		btnOff.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				lblFavAmFm.setEnabled(false);
-
-				
-				btnNext.setEnabled(false);
-				txtFrecuencia.setEnabled(false);
-				lblRadio.setEnabled(false);
-				btn1AM.setEnabled(false);
-				btn2AM.setEnabled(false);
-				btn3AM.setEnabled(false);
-				btn4AM.setEnabled(false);
-				btn5AM.setEnabled(false);
-				btn6AM.setEnabled(false);
-				btn7AM.setEnabled(false);
-				btn8AM.setEnabled(false);
-				btn9AM.setEnabled(false);
-				btn10AM.setEnabled(false);
-				btn11AM.setEnabled(false);
-				btn12AM.setEnabled(false);
-				btnSave.setEnabled(false);
-				BF_cambiar.setEnabled(false);
-				lblF.setEnabled(false);
-				lblNumero.setEnabled(false);
-				
-				
->>>>>>> b3e16665aca7bcde9064ee9159b2d2a83f32e4ac
-			}
-		});
-
-		btnSave.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
-				changeSave();
 			}
 		});
 
@@ -798,131 +679,6 @@ public class RadioView {
 			}
 		});
 
-=======
-				// TODO Auto-generated method stub
-				
-				if (txtNumero.getText().equals("1")) {		
-					
-					btn1AM.setText(txtFrecuencia.getText());
-				}else {
-					if (txtNumero.getText().equals("2")) {
-						btn2AM.setText(txtFrecuencia.getText());					
-					}else {
-						if (txtNumero.getText().equals("3")) {
-							btn3AM.setText(txtFrecuencia.getText());					
-						}else {
-							
-								
-									if (txtNumero.getText().equals("4")) {
-										btn4AM.setText(txtFrecuencia.getText());					
-									}else {
-										if (txtNumero.getText().equals("5")) {
-											btn5AM.setText(txtFrecuencia.getText());					
-										}else {
-											if (txtNumero.getText().equals("6")) {
-												btn6AM.setText(txtFrecuencia.getText());					
-											}else {
-												if (txtNumero.getText().equals("7")) {
-													btn7AM.setText(txtFrecuencia.getText());					
-												}else {
-													if (txtNumero.getText().equals("8")) {
-														btn8AM.setText(txtFrecuencia.getText());					
-													}else {
-														if (txtNumero.getText().equals("9")) {
-															btn9AM.setText(txtFrecuencia.getText());					
-														}else {
-															if (txtNumero.getText().equals("10")) {
-																btn10AM.setText(txtFrecuencia.getText());					
-															}else {
-																if (txtNumero.getText().equals("11")) {
-																	btn11AM.setText(txtFrecuencia.getText());					
-																}else {
-																	if (txtNumero.getText().equals("12")) {
-																		btn12AM.setText(txtFrecuencia.getText());					
-																	}else {
-																		
-																		JOptionPane.showMessageDialog(lblNumero, "Introduzca un boton valido");
-																		
-																	}
-																		
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-							limpiar();
-			}
-		});
-		btn1AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn1AM.getText());
-			}
-		});
-		btn2AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn2AM.getText());
-			}
-		});
-		btn3AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn3AM.getText());
-			}
-		});
-		btn4AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn4AM.getText());
-			}
-		});
-		btn5AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn5AM.getText());
-			}
-		});
-		btn6AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn6AM.getText());
-			}
-		});
-		btn7AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn7AM.getText());
-			}
-		});
-		btn8AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn8AM.getText());
-			}
-		});
-		btn9AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn9AM.getText());
-			}
-		});
-		btn10AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn10AM.getText());
-			}
-		});
-		btn11AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn11AM.getText());
-			}
-		});
-		btn12AM.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtFrecuencia.setText(btn12AM.getText());
-			}
-		});
-		
-		
-		
->>>>>>> b3e16665aca7bcde9064ee9159b2d2a83f32e4ac
 	}
 
 	private void changeSave() {
@@ -932,48 +688,5 @@ public class RadioView {
             this.save = true;
         }
 	}
-<<<<<<< HEAD
 
-=======
-	public static void Estacion(iRadio ir) {
-		ir.Estacion();
-	}
-	public static void ColocarEstacion(iRadio ir) {
-		ir.cambiarFrecuencia();
-		//txtFrecuencia=ir.estacionActual();
-		//String.valueOf(ir.cambiarFrecuencia());
-		System.out.println("La laa la raa laaa!");
-	}
-	public String  FR(iRadio ir) {
-		//System.out.println(ir.estacionActual());
-		return ir.estacionActual();
-		
-		
-		
-	}
-	public String  CambioAM(iRadio ir) {
-		//System.out.println(ir.estacionActual());
-		ir.avanzar();
-		
-		double ld_estacion;
-		ld_estacion = Double.parseDouble(ir.estacionActual());
-		ld_estacion = Math.round(ld_estacion * 100.0) /100.0;
-		return String.valueOf(ld_estacion);
-		
-		//return ir.estacionActual();
-	}
-	
-	public String  Cfrecuencia(iRadio ir) {
-		//System.out.println(ir.estacionActual());
-		ir.cambiarFrecuencia();
-	/*	double ld_estacion;
-		ld_estacion = Double.parseDouble(ir.estacionActual());
-		ld_estacion = Math.round(ld_estacion * 100.0) /100.0;
-		return String.valueOf(ld_estacion);*/
-		
-		return ir.estacionActual();
-	}
->>>>>>> b3e16665aca7bcde9064ee9159b2d2a83f32e4ac
 }
-
-

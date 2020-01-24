@@ -24,8 +24,8 @@ public class Radio implements RadioInterface {
     private static DecimalFormat df = new DecimalFormat("#.#");
     
     public Radio() {
-        onOff = false; //<-- Apagado
-        amFm = false; //<-- Am
+        onOff = false; // <-- Apagado
+        amFm = false; // <-- Am
         estacionActual = 530.0; //Inicio de las estaciones
         estacionesAm = new ArrayList<Double>(12);
         estacionesFm = new ArrayList<Double>(12);

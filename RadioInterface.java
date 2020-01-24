@@ -11,7 +11,7 @@ Muestra todos los metodos que seran definidos por un objeto radio.
 
 Last modification: 22/01/2020
 */
-interface RadioInterface {
+public interface RadioInterface {
 
     /*
     Devuelve la estacion que esta sonando actualmente

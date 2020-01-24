@@ -324,7 +324,7 @@
         <dia:real val="8.4000000000000004"/>
       </dia:attribute>
       <dia:attribute name="name">
-        <dia:string>#iRadio#</dia:string>
+        <dia:string>#RadioInterface#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
         <dia:string>#Interface#</dia:string>
@@ -1183,7 +1183,7 @@
         <dia:point val="30.0652,-476.068"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="30.0152,-477.918;46.4609,-467.28"/>
+        <dia:rectangle val="30.0152,-477.918;46.4609,-467.279"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -1192,7 +1192,7 @@
         <dia:point val="30.0652,-476.068"/>
         <dia:point val="30.0652,-477.118"/>
         <dia:point val="46.0109,-477.118"/>
-        <dia:point val="46.0109,-467.73"/>
+        <dia:point val="46.0109,-467.729"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>

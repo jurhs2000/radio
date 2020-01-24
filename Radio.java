@@ -14,7 +14,7 @@ Last modification: 20/01/2020
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-class Radio implements RadioInterface {
+public class Radio implements RadioInterface {
 
     private boolean onOff; //guarda el estado de encendido o apagado
     private boolean amFm; //guarda el estado de AM/FM FALSE = AM / TRUE = FM

@@ -40,7 +40,7 @@ class Radio implements iRadio {
     }
 
     public Boolean estado() {
-        return this.onOff;
+        return this.amFm;
     }
 
     public void onOff() { //Cambia de true a false y viceversa
@@ -82,7 +82,8 @@ class Radio implements iRadio {
         }
     }
 
-    public void guardar(final int boton) { //Guarda la estacion actual en la posicion del boton seleccionado a la lista indicada
+    public void guardar(int boton) { //Guarda la estacion actual en la posicion del boton seleccionado a la lista indicada
+        boton -= 1;
         if (this.amFm) {
             this.estacionesFm.set(boton, this.estacionActual);
         } else {

@@ -31,10 +31,10 @@ import javax.swing.JTextField;
 
 public class RadioView {
 
-	Radio radio = new Radio();
+	RadioInterface radio = new Radio(); //Instancia el objeto Radio
 	private JFrame frmRadio;
 	private JTextField txtFrecuencia;
-	private boolean save = false;
+	private boolean save = false; //Saber si el boton Save fue presionado
 
 	/**
 	 * Launch the application.

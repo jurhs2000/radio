@@ -14,7 +14,7 @@ Last modification: 20/01/2020
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-class Radio implements RadioInterface {
+class Radio implements iRadio {
 
     private boolean onOff; //guarda el estado de encendido o apagado
     private boolean amFm; //guarda el estado de AM/FM FALSE = AM / TRUE = FM
@@ -40,7 +40,7 @@ class Radio implements RadioInterface {
     }
 
     public Boolean estado() {
-        return this.amFm;
+        return this.onOff;
     }
 
     public void onOff() { //Cambia de true a false y viceversa

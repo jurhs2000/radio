@@ -18,8 +18,8 @@ class Main {
         EventQueue.invokeLater(new Runnable(){
             public void run() {
 				try {
-                    RadioView window = new RadioView();
-                    window.start();
+                    RadioView window = new RadioView(); //Instanciar la Vista de Radio
+                    window.start(); //Hace visible la ventana JFrame
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

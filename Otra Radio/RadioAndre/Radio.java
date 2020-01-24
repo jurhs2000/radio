@@ -14,7 +14,7 @@ Last modification: 20/01/2020
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-class Radio implements RadioInterface {
+class Radio implements iRadio {
 
     private boolean onOff; //guarda el estado de encendido o apagado
     private boolean amFm; //guarda el estado de AM/FM FALSE = AM / TRUE = FM
@@ -40,7 +40,7 @@ class Radio implements RadioInterface {
     }
 
     public Boolean estado() {
-        return this.amFm;
+        return this.onOff;
     }
 
     public void onOff() { //Cambia de true a false y viceversa
@@ -82,8 +82,7 @@ class Radio implements RadioInterface {
         }
     }
 
-    public void guardar(int boton) { //Guarda la estacion actual en la posicion del boton seleccionado a la lista indicada
-        boton -= 1;
+    public void guardar(final int boton) { //Guarda la estacion actual en la posicion del boton seleccionado a la lista indicada
         if (this.amFm) {
             this.estacionesFm.set(boton, this.estacionActual);
         } else {
@@ -92,6 +91,7 @@ class Radio implements RadioInterface {
     }
 
     public void seleccionarEmisora(int boton) { //Toma el valor del boton seleccionado en la lista de estaciones y la coloca en la actual
+        boton -= 1;
         if (this.amFm) {
             if (estacionesFm.get(boton) >= 87.9) {
                 this.estacionActual = this.estacionesFm.get(boton);

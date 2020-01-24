@@ -16,33 +16,53 @@ public interface RadioInterface {
     /*
     Devuelve la estacion que esta sonando actualmente
     */
+	/**
+	 * 
+	 * @return estacionActual
+	 */
     String estacionActual();
 
     /*
     Devuelve el estado actual en que se encuentra la radio
     */
+    /**
+     * 
+     * @return estado 
+     */
     Boolean estado();
 
     /*
     Cambia la radio de encendida a apagada o viceversa
     */
+    /**
+     * @return onOff 
+     */
     void onOff();
 
     /*
     Cambia el estado de la frecuencia AM/FM
     */
+    /**
+     * @return cambiarFrecuencia
+     */
     void cambiarFrecuencia();
 
     /*
     Aumenta la frecuencia de que esta sonando actualmente
     */
     void avanzar();
-
+    /**
+     * @return avanzar
+     * @param boton
+     */
     /*
     Recibe el numero del boton en el que se guarda la emisora y lo agrega a la lista
     */
     void guardar(int boton);
-
+    /**
+     * 
+     * @param boton
+     */
     /*
     Recibe el numero del boton, busca en la lista y lo agrega a la estacion actual
     */

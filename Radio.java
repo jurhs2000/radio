@@ -21,7 +21,7 @@ Last modification: 20/01/2020
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class Radio implements iRadio {
+public class Radio implements RadioInterface{
 	
 	
 	
@@ -45,7 +45,7 @@ public class Radio implements iRadio {
     }
 
     /**
-     * @param estacionActual nos indica la estación actual
+     * @param estacionActual nos indica la estaciï¿½n actual
      * @return convierte la estacion a String
      * 
      */
@@ -141,6 +141,7 @@ public class Radio implements iRadio {
     */
 
     public void seleccionarEmisora(int boton) { //Toma el valor del boton seleccionado en la lista de estaciones y la coloca en la actual
+        boton -= 1;
         if (this.amFm) {
             if (estacionesFm.get(boton) >= 87.9) {
                 this.estacionActual = this.estacionesFm.get(boton);
